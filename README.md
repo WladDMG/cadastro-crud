@@ -1,146 +1,116 @@
-# Projeto Completo: Cadastro CRUD com Backend NestJS + Frontend Expo React Native
+Projeto Completo: Cadastro CRUD com Backend NestJS + Frontend Expo React Native
+Full Project: CRUD User Registration with NestJS Backend + React Native Expo Frontend
+<p align="center"> <a href="https://nestjs.com/" target="_blank"> <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="NestJS Logo" /> </a> &nbsp;&nbsp;&nbsp; <a href="https://reactnative.dev/" target="_blank"> <img src="https://reactnative.dev/img/header_logo.svg" width="120" alt="React Native Logo" /> </a> </p>
+Descrição do Projeto (PT-BR)
 
-<p align="center">
-  <a href="https://nestjs.com/" target="_blank">
-    <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="NestJS Logo" />
-  </a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://reactnative.dev/" target="_blank">
-    <img src="https://reactnative.dev/img/header_logo.svg" width="120" alt="React Native Logo" />
-  </a>
-</p>
+Aplicação fullstack para cadastro e gerenciamento de usuários.
 
-## Descrição do Projeto
+Backend: API REST com NestJS, MongoDB, autenticação com JWT e validação.
 
-Este projeto é uma aplicação fullstack para cadastro e gerenciamento de usuários.  
-- **Backend:** API REST construída com NestJS, MongoDB e autenticação JWT para proteger rotas.  
-- **Frontend:** Aplicação mobile feita com React Native + Expo, consumindo a API para registrar, autenticar e gerenciar usuários.
+Frontend: App mobile com React Native + Expo, consumo da API com Axios, com telas de login, cadastro e CRUD de usuários.
 
----
+Project Description (EN)
 
-## Tecnologias Usadas
+A fullstack application for user registration and management.
 
-### Backend
+Backend: REST API built with NestJS, MongoDB, JWT authentication and validation.
 
-- NestJS
-- TypeScript
-- MongoDB + Mongoose
-- JWT + Passport para autenticação
-- class-validator para validação de dados
+Frontend: Mobile app using React Native + Expo, consuming the API for login, registration, and user CRUD.
 
-### Frontend
+Tecnologias Usadas | Technologies Used
 
-- React Native
-- Expo
-- Axios para requisições HTTP
-- React Navigation (opcional, se usado)
-- AsyncStorage para salvar token JWT (se implementado)
-
----
-
-## Estrutura do Repositório
-
-```CADASTRO
-/
-|-- cadastro-crud-api/         # Código da API NestJS
-|-- cadastro-crud-app/         # Código do app React Native com Expo
-|-- README.md                  # Este arquivo
-Configurando o Backend
-Navegue até a pasta do backend:
-
-bash
-Copiar
-Editar
-cd backend
-Instale as dependências:
-
-bash
-Copiar
-Editar
-npm install
-Crie o arquivo .env com as variáveis necessárias:
-
-env
-Copiar
-Editar
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-PORT=3000
-Rode a API:
-
-bash
-Copiar
-Editar
-npm run start:dev
-Configurando o Frontend
-Navegue até a pasta do frontend:
-
-bash
-Copiar
-Editar
-cd frontend
-Instale as dependências:
-
-bash
-Copiar
-Editar
-npm install
-Inicie o app Expo:
-
-bash
-Copiar
-Editar
-npx expo start
-Use o app Expo Go no seu celular para rodar o app, ou um emulador.
-
-Como Usar
 Backend
-Endpoints principais:
+NestJS
 
-POST /auth/register — para criar usuário
+TypeScript
 
-POST /auth/login — para login e gerar token JWT
+MongoDB + Mongoose
 
-Rotas protegidas /users para operações CRUD de usuário (precisa passar token no header)
+JWT + Passport (auth)
+
+class-validator (data validation)
 
 Frontend
-Tela de cadastro de usuário
 
-Tela de login que armazena o token JWT
+React Native
 
-Telas para visualizar, editar e deletar usuários (consomem o backend via API)
+Expo
 
-Testando
-Com Postman ou Insomnia (Backend)
-Teste os endpoints de autenticação (/auth/register e /auth/login).
+Axios (API requests)
 
-Pegue o token JWT gerado no login.
+React Navigation (optional)
 
-Use o token para testar as rotas protegidas (/users).
+AsyncStorage (JWT storage, if implemented)
 
-No Frontend
-Use o app para registrar e logar.
+Estrutura do Repositório | Repository Structure
 
-Navegue para as telas protegidas para testar o CRUD de usuários.
+cadastro/
+├── cadastro-crud-api/       # Backend - NestJS API
+├── cadastro-crud-app/       # Frontend - React Native + Expo App
+└── README.md                # Documentação / Documentation
+
+Configurando o Backend | Backend Setup
+
+cd cadastro-crud-api
+npm install
+
+Crie um arquivo .env com o conteúdo:
+
+MONGO_URI=mongodb://localhost:27017/cadastro
+JWT_SECRET=sua_chave_secreta
+PORT=3000
+
+Inicie a API:
+
+npm run start:dev
+
+Configurando o Frontend | Frontend Setup
+
+cd cadastro-crud-app/cadastro-app
+npm install
+npx expo start
+
+Use o Expo Go no celular ou um emulador Android/iOS para rodar o app.
+Use Expo Go app on your phone or an emulator to run the app.
+
+Como Usar / Testar | How to Use / Test
+Backend Endpoints
+POST /auth/register — cria um novo usuário
+
+POST /auth/login — autentica e retorna token JWT
+
+GET /users — (protegido) lista usuários
+
+PATCH /users/:id — (protegido) edita usuário
+
+DELETE /users/:id — (protegido) deleta usuário
+
+Use o Postman ou Insomnia para testar passando o token no header.
+
+Frontend Funcionalidades
+Tela de cadastro
+
+Tela de login com armazenamento do JWT
+
+Telas protegidas com lista, edição e remoção de usuários
 
 Deploy
-Backend: Pode ser hospedado em serviços como Heroku, AWS, DigitalOcean ou qualquer outro que suporte Node.js e MongoDB.
+Backend: Pode ser hospedado em Heroku, AWS, Render ou qualquer serviço que suporte Node.js + MongoDB.
 
-Frontend: Pode ser publicado no Expo ou compilado para Android/iOS.
+Frontend: Pode ser publicado diretamente via Expo ou exportado para APK/IPA.
 
-Contato
-Autor: Wladmir Silveira
+Autor | Author
+Wladmir Silveira
+wladdmg@gmail.com
+https://github.com/WladDMG
 
-Email: wladdmg@gmail.com
+Licença | License
+Este projeto está licenciado sob a licença MIT.
+This project is licensed under the MIT License.
 
-GitHub: https://github.com/WladDMG
+Agradecimentos | Acknowledgments
+NestJS pela robustez e arquitetura no backend.
 
-Licença
-MIT License
+React Native e Expo pela simplicidade no desenvolvimento mobile.
 
-Agradecimentos
-NestJS pela arquitetura sólida no backend.
-
-React Native e Expo pela facilidade no desenvolvimento mobile.
-
-MongoDB pelo banco de dados NoSQL escalável.
+MongoDB por seu banco escalável e flexível.
